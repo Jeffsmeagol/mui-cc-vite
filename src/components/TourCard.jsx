@@ -18,37 +18,36 @@ const Img = styled("img")({
 const TourCard = ({ tour }) => {
   return (
     <Grid item xs={3}>
-      <Paper elevation={3}>
-        <Link to="/asdf">
-          {" "}
+      <Link to={`${tour.id}`}>
+        <Paper elevation={3}>
           <Img src={tour.image} alt="" />
-        </Link>
-        <Box px={1}>
-          <Typography component="h2" variant="subtitle1">
-            {tour.name}
-          </Typography>
-          <Stack direction="row" alignItems="flex-end" spacing={0.5}>
-            <AccessTime sx={{ width: 12.5 }} />
-            <Typography variant="subtitle2">{tour.duration} hours</Typography>
-          </Stack>
-          <Stack direction="row" alignItems="flex-end" spacing={0.5} pt={3}>
-            <Rating
-              name="read-only"
-              value={tour.rating}
-              precision={0.5}
-              size="small"
-              readOnly
-            />
-            <Typography variant="body2">{tour.rating}</Typography>
-            <Typography variant="body2">
-              ({tour.numberOfReviews} reviews)
+          <Box px={1}>
+            <Typography component="h2" variant="subtitle1">
+              {tour.name}
             </Typography>
-          </Stack>
-          <Typography variant="h6" component="h3">
-            From C ${tour.price}
-          </Typography>
-        </Box>
-      </Paper>
+            <Stack direction="row" alignItems="flex-end" spacing={0.5}>
+              <AccessTime sx={{ width: 12.5 }} />
+              <Typography variant="subtitle2">{tour.duration} hours</Typography>
+            </Stack>
+            <Stack direction="row" alignItems="flex-end" spacing={0.5} pt={3}>
+              <Rating
+                name="read-only"
+                value={tour.rating}
+                precision={0.5}
+                size="small"
+                readOnly
+              />
+              <Typography variant="body2">{tour.rating}</Typography>
+              <Typography variant="body2">
+                ({tour.numberOfReviews} reviews)
+              </Typography>
+            </Stack>
+            <Typography variant="h6" component="h3">
+              From C ${tour.price}
+            </Typography>
+          </Box>
+        </Paper>
+      </Link>
     </Grid>
   );
 };

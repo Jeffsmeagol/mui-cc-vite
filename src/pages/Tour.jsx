@@ -6,26 +6,29 @@ import {
   styled,
   Typography,
 } from "@mui/material";
+import { useParams } from "react-router-dom";
+
 import Accordian from "../components/Accordian";
 import BasicModal from "../components/BasicModal";
 import ImageCollage from "../components/ImageCollage";
+import cities from "../data.json";
 
 const Img = styled("img")({
   height: "20rem",
+  width: 600,
 });
 
 export default function Tour() {
+  const { id } = useParams();
+
   return (
     <>
       <Container sx={{ width: 900, my: 8 }}>
-        <Typography variant="h3" component="h1" >
+        <Typography variant="h3" component="h1">
           Explore the World
         </Typography>
         <Stack direction="row" alignItems="center" mt={3} spacing={1}>
-          <Img
-            src="https://media.timeout.com/images/105124791/750/422/image.jpg"
-            alt=""
-          />
+          <Img src={cities[0].tours[`${id - 1}`].image} alt="" />
           <ImageCollage />
         </Stack>
         <Typography variant="h6" component="h4" mt={3}>
