@@ -15,10 +15,10 @@ const Img = styled("img")({
   height: "5rem",
 });
 
-const TourCard = ({ tour }) => {
+const TourCard = ({ tour, cityId }) => {
   return (
     <Grid item xs={3}>
-      <Link to={`${tour.id}`}>
+      <Link to={`${tour.id + "-" + cityId}`}>
         <Paper elevation={3}>
           <Img src={tour.image} alt="" />
           <Box px={1}>

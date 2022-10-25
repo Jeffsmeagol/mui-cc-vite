@@ -7,14 +7,14 @@ const Home = () => {
   return (
     <>
       <Container sx={{ my: 5 }}>
-        {cities.map(({ name, tours, id }, idx) => (
+        {cities.map(({ name, tours, id }) => (
           <>
-            <Typography variant="h4" component="h2" mt={5} mb={3} key={idx}>
+            <Typography variant="h4" component="h2" mt={5} mb={3}>
               Top {name} Tours
             </Typography>
             <Grid container spacing={5}>
-              {tours.map((tour, idx) => (
-                <TourCard tour={tour} key={idx} />
+              {tours.map((tour) => (
+                <TourCard tour={tour} cityId={id} />
               ))}
             </Grid>
           </>

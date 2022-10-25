@@ -20,6 +20,7 @@ const Img = styled("img")({
 
 export default function Tour() {
   const { id } = useParams();
+  const [tourId, cityId] = id.split("-");
 
   return (
     <>
@@ -28,7 +29,10 @@ export default function Tour() {
           Explore the World
         </Typography>
         <Stack direction="row" alignItems="center" mt={3} spacing={1}>
-          <Img src={cities[0].tours[`${id - 1}`].image} alt="" />
+          <Img
+            src={cities[`${cityId - 1}`].tours[`${tourId - 1}`].image}
+            alt=""
+          />
           <ImageCollage />
         </Stack>
         <Typography variant="h6" component="h4" mt={3}>
