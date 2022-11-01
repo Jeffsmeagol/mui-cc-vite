@@ -9,12 +9,12 @@ const Home = () => {
       <Container sx={{ my: 5 }}>
         {cities.map(({ name, tours, id }) => (
           <>
-            <Typography variant="h4" component="h2" mt={5} mb={3}>
+            <Typography key={id} variant="h4" component="h2" mt={5} mb={3}>
               Top {name} Tours
             </Typography>
-            <Grid container spacing={5}>
+            <Grid key={id+1} container spacing={5}>
               {tours.map((tour) => (
-                <TourCard tour={tour} cityId={id} />
+                <TourCard key={tour.id} tour={tour} cityId={id} />
               ))}
             </Grid>
           </>
